@@ -1,4 +1,8 @@
+rm(list = ls())
+gc()
 
+#load packages
+library(dplyr)
 
 #Import data
 DQ_Data<-read.table(file = 'DQ_Data_b.tsv', sep = '\t', header = TRUE)
