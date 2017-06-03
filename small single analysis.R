@@ -30,7 +30,6 @@ set3<-subset(set3, set3$site %in% learning_set$site)
 
 #subsetting learning set by each data set
 learning1<-subset(learning_set, learning_set$site %in% set1$site)
-learning1<-subset(learning_set, learning_set$site %in% set1$site)
 learning2<-subset(learning_set, learning_set$site %in% set2$site)
 learning3<-subset(learning_set, learning_set$site %in% set3$site)
 
