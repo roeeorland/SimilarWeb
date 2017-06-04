@@ -32,7 +32,7 @@ plotLinearRegression<-function(x,y)
 
 
 
-removeOutliers<-function(x,y)
+Outliers<-function(x,y)
 {
         
         
@@ -58,4 +58,26 @@ removeOutliers<-function(x,y)
         
         
 }
+
+
+
+clustering<-function(x,y)
+{
+        kframe<-cbind(x,y,1:length(x))
+        km<-kmeans(kframe, centers = 2)
+        k_index<-1:length(x)
+        if (length(km$cluster[km$cluster==1])/length(km$cluster)>0.95)
+        {
+                kframe<-kframe[km$cluster==1,] 
+        }
+        
+        if (length(km$cluster[km$cluster==2])/length(km$cluster)>0.95)
+        {
+                kframe<-kframe[km$cluster==2,] 
+        }  
+        
+        kframe[,3]
+        
+}
+
         
